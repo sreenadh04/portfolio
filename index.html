@@ -563,7 +563,7 @@ footer{text-align:center;padding:2.5rem 2rem;border-top:1px solid var(--border);
       </div>
       <div class="cd-name">LeetCode</div>
       <div class="cd-desc">Data Structures &amp; Algorithms</div>
-      <a href="https://leetcode.com/u/Sreenadh13/" class="cd-link" target="_blank" rel="noopener noreferrer" onclick="event.preventDefault(); window.open(this.href, "_blank", "noopener,noreferrer");">View Profile →</a>
+      <a href="https://leetcode.com/u/Sreenadh13/" class="cd-link" target="_blank" rel="noopener noreferrer">View Profile →</a>
     </div>
     <div class="coding-card gfg rv d2">
       <div class="ring-wrap">
@@ -575,7 +575,7 @@ footer{text-align:center;padding:2.5rem 2rem;border-top:1px solid var(--border);
       </div>
       <div class="cd-name">GeeksforGeeks</div>
       <div class="cd-desc">CS Fundamentals &amp; Practice</div>
-      <a href="https://www.geeksforgeeks.org/user/sreenadh25/" class="cd-link" target="_blank" rel="noopener noreferrer" onclick="event.preventDefault(); window.open(this.href, "_blank", "noopener,noreferrer");">View Profile →</a>
+      <a href="https://www.geeksforgeeks.org/user/sreenadh25/" class="cd-link" target="_blank" rel="noopener noreferrer">View Profile →</a>
     </div>
     <div class="coding-card cc rv d3">
       <div class="ring-wrap">
@@ -587,7 +587,7 @@ footer{text-align:center;padding:2.5rem 2rem;border-top:1px solid var(--border);
       </div>
       <div class="cd-name">CodeChef</div>
       <div class="cd-desc">Competitive Programming</div>
-      <a href="https://www.codechef.com/users/warm_aura_79/" class="cd-link" target="_blank" rel="noopener noreferrer" onclick="event.preventDefault(); window.open(this.href, "_blank", "noopener,noreferrer");">View Profile →</a>
+      <a href="https://www.codechef.com/users/warm_aura_79/" class="cd-link" target="_blank" rel="noopener noreferrer">View Profile →</a>
     </div>
   </div>
 </section>
@@ -834,7 +834,6 @@ window.addEventListener('scroll',()=>{
 });
 
 // ============ 3D TILT ============
-document.querySelectorAll('.cd-link').forEach(link=>{link.addEventListener('click',e=>{e.preventDefault();window.open(link.href,'_blank','noopener,noreferrer');});});
 document.querySelectorAll('.project-card').forEach(card=>{
   card.addEventListener('mousemove',e=>{
     const r=card.getBoundingClientRect();
