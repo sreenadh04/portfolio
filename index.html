@@ -88,20 +88,9 @@ nav.scrolled{background:rgba(3,3,8,.97);box-shadow:0 4px 30px rgba(0,0,0,.8);}
 .stat-l{font-size:.75rem;color:var(--muted);margin-top:.2rem;}
 /* PHOTO */
 .hero-photo{flex-shrink:0;opacity:0;animation:fade-up .8s ease 2.9s forwards;}
-.photo-wrap{position:relative;width:220px;height:220px;}
-.photo-outer{position:absolute;inset:-8px;border-radius:50%;background:conic-gradient(var(--purple),var(--cyan),var(--pink),var(--purple));animation:spin 4s linear infinite;filter:blur(4px);opacity:.8;}
-.photo-inner-ring{position:absolute;inset:-3px;border-radius:50%;background:conic-gradient(var(--cyan),var(--purple-light),var(--pink),var(--cyan));animation:spin 4s linear infinite reverse;}
-.photo-img{position:absolute;inset:4px;border-radius:50%;overflow:hidden;border:3px solid var(--bg);z-index:1;}
-.photo-img img{width:100%;height:100%;object-fit:cover;object-position:center top;}
-.photo-scan{position:absolute;inset:4px;border-radius:50%;z-index:2;background:linear-gradient(180deg,transparent 0%,rgba(6,182,212,.07) 50%,transparent 100%);animation:scan 3s ease-in-out infinite;pointer-events:none;}
-@keyframes scan{0%{transform:translateY(-100%);}100%{transform:translateY(100%);};}
-@keyframes spin{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
-.pp{position:absolute;font-family:'Space Mono',monospace;font-size:.72rem;color:var(--purple-light);opacity:.75;pointer-events:none;}
-.pp1{top:-12px;left:50%;animation:fp 3s ease-in-out infinite;}
-.pp2{top:22px;right:-22px;animation:fp 3s ease-in-out infinite .5s;}
-.pp3{bottom:22px;left:-22px;animation:fp 3s ease-in-out infinite 1s;}
-.pp4{bottom:-12px;right:28%;animation:fp 3s ease-in-out infinite 1.5s;}
-@keyframes fp{0%,100%{transform:translateY(0) rotate(0deg);opacity:.75;}50%{transform:translateY(-8px) rotate(4deg);opacity:1;}}
+.photo-wrap{position:relative;width:280px;height:340px;}
+.photo-img{position:absolute;inset:0;border-radius:16px;overflow:hidden;border:1px solid var(--border);z-index:1;}
+.photo-img img{width:100%;height:100%;object-fit:cover;object-position:center 15%;}
 @keyframes fade-up{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
 
 /* ============ DIVIDER ============ */
@@ -142,6 +131,20 @@ section{padding:5rem 2rem;max-width:1000px;margin:0 auto;position:relative;z-ind
 .tl-title{font-weight:700;font-size:.88rem;margin-bottom:.15rem;}
 .tl-sub{font-size:.78rem;color:var(--muted);}
 .tl-date{font-family:'Space Mono',monospace;font-size:.68rem;color:var(--purple-light);margin-top:.2rem;}
+
+/* ============ EDUCATION ============ */
+.edu-section{padding-left:40px;position:relative;margin-top:1rem;}
+.edu-line{position:absolute;left:14px;top:10px;bottom:10px;width:2px;background:linear-gradient(180deg,rgba(124,58,237,.4),rgba(6,182,212,.15));}
+.edu-item{display:flex;gap:20px;margin-bottom:22px;position:relative;}
+.edu-icon{position:absolute;left:-40px;top:0;width:28px;height:28px;border-radius:8px;background:var(--bg2);border:1.5px solid var(--purple-light);display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;}
+.edu-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:14px 18px;flex:1;transition:border-color .25s;}
+.edu-card:hover{border-color:rgba(167,139,250,.5);}
+.edu-top{display:flex;justify-content:space-between;align-items:start;flex-wrap:wrap;gap:8px;}
+.edu-title{color:var(--text);font-weight:700;font-size:.9rem;}
+.edu-date{font-family:'Space Mono',monospace;font-size:.65rem;color:var(--purple-light);background:rgba(124,58,237,.12);padding:3px 9px;border-radius:100px;white-space:nowrap;}
+.edu-sub{color:var(--muted);font-size:.78rem;margin-top:4px;}
+.edu-highlight{margin-top:26px;padding-top:22px;border-top:1px solid var(--border);display:flex;gap:14px;align-items:center;}
+.edu-hl-icon{width:44px;height:44px;border-radius:12px;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
 
 /* ============ PROJECTS — SPOTLIGHT ============ */
 .projects-container{position:relative;}
@@ -282,7 +285,7 @@ footer{text-align:center;padding:2.5rem 2rem;border-top:1px solid var(--border);
   .about-grid{grid-template-columns:1fr;}
   nav{padding:1rem;}
   .nav-links{gap:1rem;}
-  .photo-wrap{width:160px;height:160px;}
+  .photo-wrap{width:200px;height:260px;}
   #cur-dot,#cur-ring{display:none;}
   body{cursor:auto;}
   .btn-p,.btn-o,.plink,.c-link,.cd-link,.flip,.project-card{cursor:pointer;}
@@ -312,6 +315,7 @@ footer{text-align:center;padding:2.5rem 2rem;border-top:1px solid var(--border);
   <a href="#home" class="nav-logo">&lt;sreenadh /&gt;</a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
+    <li><a href="#education">Education</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#coding">Coding</a></li>
@@ -340,21 +344,13 @@ footer{text-align:center;padding:2.5rem 2rem;border-top:1px solid var(--border);
       <div class="hero-stats">
         <div><div class="stat-n">AIR <span class="ctr" data-t="1476">0</span></div><div class="stat-l">GATE CS 2025 · Top 0.8%</div></div>
         <div><div class="stat-n"><span class="ctr" data-t="4">0</span>+</div><div class="stat-l">Live Projects</div></div>
-        <div><div class="stat-n"><span class="ctr" data-t="898" data-dec="true">0</span></div><div class="stat-l">B.Tech CGPA</div></div>
       </div>
     </div>
     <div class="hero-photo">
       <div class="photo-wrap">
-        <div class="photo-outer"></div>
-        <div class="photo-inner-ring"></div>
         <div class="photo-img">
-          <img src="https://raw.githubusercontent.com/sreenadh04/portfolio/main/photo1.jpg" alt="Annaluru Sreenadh" onerror="this.src='https://via.placeholder.com/220'"/>
+          <img src="https://raw.githubusercontent.com/sreenadh04/portfolio/main/photo1.jpg" alt="Annaluru Sreenadh" onerror="this.src='https://via.placeholder.com/280x340'"/>
         </div>
-        <div class="photo-scan"></div>
-        <div class="pp pp1">&lt;/&gt;</div>
-        <div class="pp pp2">{ }</div>
-        <div class="pp pp3">AI</div>
-        <div class="pp pp4">01</div>
       </div>
     </div>
   </div>
@@ -382,12 +378,71 @@ footer{text-align:center;padding:2.5rem 2rem;border-top:1px solid var(--border);
         <p>Currently exploring <strong>LangGraph, multi-agent orchestration, and RAG at scale</strong>. Always open to research and internship opportunities.</p>
         <div class="open-badge"><span class="avail-dot"></span>Open to Internships &amp; Research</div>
       </div>
-      <div class="timeline">
-        <div class="tl"><div class="tl-dot"></div><div><div class="tl-title">NIT Karnataka, Surathkal</div><div class="tl-sub">M.Tech CSE (Information Security) · CGPA 8.86</div><div class="tl-date">2025 – Present</div></div></div>
-        <div class="tl"><div class="tl-dot"></div><div><div class="tl-title">SVU College of Engineering, Tirupati</div><div class="tl-sub">B.Tech CSE · CGPA 8.98</div><div class="tl-date">2021 – 2025</div></div></div>
-        <div class="tl"><div class="tl-dot"></div><div><div class="tl-title">GATE CS 2025 — AIR 1476</div><div class="tl-sub">Top 0.8% among 1,70,825 candidates</div><div class="tl-date">2025</div></div></div>
-        <div class="tl"><div class="tl-dot"></div><div><div class="tl-title">Currently Shipping</div><div class="tl-sub">StratOS — Autonomous Competitive Intelligence Agent ✅ Live</div><div class="tl-date">2025 – Present</div></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="eyebrow rv">academic journey</div>
+  <h2 class="sec-title rv">Education</h2>
+  <p class="sec-sub rv">The path that got me here.</p>
+
+  <div class="edu-section rv">
+    <div class="edu-line"></div>
+
+    <div class="edu-item">
+      <div class="edu-icon">🎓</div>
+      <div class="edu-card">
+        <div class="edu-top">
+          <div class="edu-title">M.Tech CSE — Information Security</div>
+          <div class="edu-date">2025 – Present</div>
+        </div>
+        <div class="edu-sub">NIT Karnataka, Surathkal · CGPA 8.86</div>
       </div>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-icon">🎓</div>
+      <div class="edu-card">
+        <div class="edu-top">
+          <div class="edu-title">B.Tech CSE</div>
+          <div class="edu-date">2021 – 2025</div>
+        </div>
+        <div class="edu-sub">SVU College of Engineering, Tirupati · CGPA 8.98</div>
+      </div>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-icon">📘</div>
+      <div class="edu-card">
+        <div class="edu-top">
+          <div class="edu-title">Intermediate (MPC)</div>
+          <div class="edu-date">2019 – 2021</div>
+        </div>
+        <div class="edu-sub"> Viswasai Jr College, Nellore · 984 / 1000 </div>
+      </div>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-icon">📗</div>
+      <div class="edu-card">
+        <div class="edu-top">
+          <div class="edu-title">10th (SSC)</div>
+          <div class="edu-date">2018 – 2019</div>
+        </div>
+        <div class="edu-sub">Good Shepherd English Medium High School · GPA 9.8 </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="edu-highlight rv">
+    <div class="edu-hl-icon">🏆</div>
+    <div>
+      <div class="edu-title">GATE CS 2025 — AIR 1476</div>
+      <div class="edu-sub">Top 0.8% among 1,70,825 candidates</div>
     </div>
   </div>
 </section>
@@ -499,6 +554,7 @@ footer{text-align:center;padding:2.5rem 2rem;border-top:1px solid var(--border);
         <span class="sk-tag t-pink">🕸️ LangGraph</span>
         <span class="sk-tag t-pink">📚 RAG</span>
         <span class="sk-tag t-pink">🔷 FAISS</span>
+        <span class="sk-tag t-pink"> MCP </span>
         <span class="sk-tag t-pink">🌐 Qdrant</span>
         <span class="sk-tag t-pink">🔍 LangSmith</span>
         <span class="sk-tag t-pink">⚡ Groq</span>
@@ -641,13 +697,12 @@ footer{text-align:center;padding:2.5rem 2rem;border-top:1px solid var(--border);
 
 <footer>
   <div class="footer-quote">Knowledge is nothing but clarity</div>
-  <p>Crafted with passion by <strong style="color:var(--purple-light)">Annaluru Sreenadh</strong> · NIT Karnataka · 2026</p>
+  <p>Crafted with passion by <strong style="color:var(--purple-light)">Annaluru Sreenadh</strong></p>
 </footer>
 
 <button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">🚀</button>
 
 <script>
-// ============ RESUME DOWNLOAD ============
 function dlResume(){
   const a=document.createElement('a');
   a.href='https://raw.githubusercontent.com/sreenadh04/portfolio/main/resume.pdf';
@@ -656,7 +711,6 @@ function dlResume(){
   a.click();
 }
 
-// ============ LOADER ============
 const ldName=document.getElementById('ld-name');
 const ldTerm=document.getElementById('ld-term');
 const nameStr='ANNALURU SREENADH';
@@ -668,7 +722,6 @@ const termLines=[
   '> Ready. Welcome. ✨'
 ];
 
-// Binary rain
 const bc=document.getElementById('bin-canvas');
 const bx=bc.getContext('2d');
 bc.width=window.innerWidth; bc.height=window.innerHeight;
@@ -688,7 +741,6 @@ function drawBin(){
 }
 const binInt=setInterval(drawBin,40);
 
-// Type name
 let ni=0;
 function typeName(){
   if(ni<nameStr.length){
@@ -707,7 +759,6 @@ function typeTerminal(idx){
   setTimeout(()=>typeTerminal(idx+1),320);
 }
 
-// ============ CURSOR ============
 const dot=document.getElementById('cur-dot');
 const ring=document.getElementById('cur-ring');
 let mx=0,my=0,rx=0,ry=0;
@@ -735,7 +786,6 @@ document.querySelectorAll('a,button,.flip,.project-card,.sk-tag,.coding-card,.na
   el.addEventListener('mouseleave',()=>document.body.classList.remove('cur-big'));
 });
 
-// ============ NEURAL NETWORK ============
 const nc=document.getElementById('neural-cv');
 const nx=nc.getContext('2d');
 nc.width=window.innerWidth; nc.height=window.innerHeight;
@@ -771,7 +821,6 @@ function drawNeural(){
 }
 drawNeural();
 
-// ============ TYPING ============
 const roles=['AI/ML Engineer','Agentic AI Developer','RAG Pipeline Architect','Security-Aware Builder'];
 let ri=0,ci=0,del=false;
 const typEl=document.getElementById('typ');
@@ -783,12 +832,10 @@ function typeRole(){
 }
 setTimeout(typeRole,3800);
 
-// ============ REVEAL ON SCROLL ============
 const revEls=document.querySelectorAll('.rv,.rl,.rr');
 const revObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on');});},{threshold:.1});
 revEls.forEach(el=>revObs.observe(el));
 
-// ============ COUNTERS ============
 const ctrs=document.querySelectorAll('.ctr');
 const cObs=new IntersectionObserver(entries=>{
   entries.forEach(e=>{
@@ -802,7 +849,6 @@ const cObs=new IntersectionObserver(entries=>{
 },{threshold:.5});
 ctrs.forEach(c=>cObs.observe(c));
 
-// ============ CODING RINGS ============
 const ringData=[{id:'r-lc',pct:.84},{id:'r-gfg',pct:.72},{id:'r-cc',pct:.58}];
 const rObs=new IntersectionObserver(entries=>{
   entries.forEach(e=>{
@@ -818,22 +864,19 @@ const rObs=new IntersectionObserver(entries=>{
 const codingSec=document.getElementById('coding');
 if(codingSec) rObs.observe(codingSec);
 
-// ============ SCROLL EVENTS ============
 window.addEventListener('scroll',()=>{
   const h=document.documentElement.scrollHeight-window.innerHeight;
   document.getElementById('scroll-bar').style.width=(window.scrollY/h*100)+'%';
   document.getElementById('nav').classList.toggle('scrolled',window.scrollY>50);
   document.getElementById('back-top').classList.toggle('on',window.scrollY>400);
-  // Active nav
-  const secs=['home','about','projects','skills','coding','achievements','contact'];
+  const secs=['home','about','education','projects','skills','coding','achievements','contact'];
   const links=document.querySelectorAll('.nav-links a');
   secs.forEach((id,i)=>{
     const s=document.getElementById(id);
-    if(s){const r=s.getBoundingClientRect();if(r.top<=120&&r.bottom>=120){links.forEach(l=>l.classList.remove('active'));if(links[i-1])links[i-1].classList.add('active');}}
+    if(s){const r=s.getBoundingClientRect();if(r.top<=120&&r.bottom>=120){links.forEach(l=>l.classList.remove('active'));if(links[i])links[i].classList.add('active');}}
   });
 });
 
-// ============ 3D TILT ============
 document.querySelectorAll('.project-card').forEach(card=>{
   card.addEventListener('mousemove',e=>{
     const r=card.getBoundingClientRect();
